@@ -1,0 +1,5 @@
+{
+    "threads": 4, 
+    "packages": 3, 
+    "headless": false
+}
