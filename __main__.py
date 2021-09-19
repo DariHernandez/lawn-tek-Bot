@@ -1,4 +1,5 @@
 import os
+import csv
 import time
 import globals
 import threading
@@ -7,7 +8,7 @@ from log import Log
 from config import Config
 from scraping_manager.automate import Web_scraping
 
-def bot (headless, packages_num, address_list=[]): 
+def bot (headless, packages_num, checkout_data={}, address_list=[]): 
     """Funtion for run a bot in threading with specific range of address
     """
 
@@ -15,8 +16,9 @@ def bot (headless, packages_num, address_list=[]):
     home_page = "https://www.lawn-tek.com/"
     scraper = Web_scraping(headless=headless)
 
+    frame_id = "deeplawn-popup-iframe"
     for address in address_list:
-
+    
         # Go to gome page
         scraper.set_page(home_page)
 
@@ -32,11 +34,11 @@ def bot (headless, packages_num, address_list=[]):
         scraper.click(selector_submit)
         time.sleep(5)
 
+
         # Continue page
         scraper.refresh_selenium()
 
         #   Go to internal frame
-        frame_id = "deeplawn-popup-iframe"
         scraper.switch_to_frame (frame_id)
 
         #   Select continue button
@@ -44,12 +46,12 @@ def bot (headless, packages_num, address_list=[]):
         scraper.click(continue_selector)
         time.sleep(2)
 
+
         # Select random packages
         scraper.refresh_selenium()
         
         #   Go to internal frame
         scraper.switch_to_main_frame()
-        frame_id = "deeplawn-popup-iframe"
         scraper.switch_to_frame(frame_id)
 
         #   Get all package buttons
@@ -61,10 +63,6 @@ def bot (headless, packages_num, address_list=[]):
             if package_button.text in valid_button_texts: 
                 package_buttons_filtered.append(package_button)
 
-        #   Debug lines
-        # for package_button in package_buttons_filtered: 
-        #     print (package_button.text)
-
         #   Click specific number of package buttons
         for _ in range (packages_num): 
             time.sleep (1)
@@ -72,14 +70,44 @@ def bot (headless, packages_num, address_list=[]):
             random_button.click()
             package_buttons_filtered.remove (random_button)
 
-        # TODO: Go to checkout page
+        #   Go to checkout page
+        go_checkout_selector = "button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.step-buttons_next__7fM51"
+        scraper.click(go_checkout_selector)
 
 
+        # Fill chekout
+        scraper.refresh_selenium()
 
-        # TODO: Fill chekout
+        #   Go to internal frame
+        scraper.switch_to_main_frame()
+        scraper.switch_to_frame(frame_id)
+
+        #   Generate random data
+        first_name = random.choice(checkout_data["first_names"])
+        last_name = random.choice(checkout_data["last_names"])
+        name = f"{first_name} {last_name}"
+        email = random.choice(checkout_data["emails"])
+        phone = random.choice(checkout_data["phones"])
+
+        #   Fill form
+        name_selector = 'input[placeholder="Name"]'
+        email_selector = 'input[placeholder="Email"]'
+        phone_selector = 'input[placeholder="Phone"]'
+
+        scraper.send_data (name_selector, name)
+        scraper.send_data (email_selector, email)
+        scraper.send_data (phone_selector, phone)
+
+        #   Pay method
+        pay_go_selector = "#myTab > li:nth-child(2)"
+        scraper.click(pay_go_selector)
+
+        submit_selector = "#__next > div > div > div > div.widget-step-form_content__1i9p6 > "
+        submit_selector += "div > div > div.mt-10.lg\:mt-0 > div > div > button"
+        scraper.click(submit_selector)
+        time.sleep(5)
 
     # End chrome
-    input ("End")
     scraper.end_browser()
 
 def main (): 
@@ -95,11 +123,37 @@ def main ():
     packages_num = credentials.get_credential("packages")
     headless = credentials.get_credential("headless")
 
-    # Read address from file
+
+    # Read address list from file
     address_path = os.path.join (os.path.dirname (__file__), "address.txt")
     with open (address_path) as file: 
         address_list = file.read().splitlines()
-    
+
+    # Get checkout data
+    checkout_data_path = os.path.join (os.path.dirname(__file__), "checkout_data.csv")
+    with open (checkout_data_path) as csv_file: 
+        csv_reader = csv.reader(csv_file)
+        csv_data = list(csv_reader)[1:]
+        
+        # Format csv data
+        checkout_data = {
+            "first_names": [],
+            "last_names": [],
+            "emails": [],
+            "phones": []
+        }
+
+        for row in csv_data: 
+            first_name = row[0]
+            last_names = row[1]
+            emails = row[2]
+            phones = row[3]
+
+            checkout_data["first_names"].append(first_name)
+            checkout_data["last_names"].append(last_names)
+            checkout_data["emails"].append(emails)
+            checkout_data["phones"].append(phones)
+
     # Calculate address for each thread
     end_range = len(address_list)
     skip_values = int(len(address_list)/threads_num)
@@ -123,7 +177,10 @@ def main ():
 
         # Create thread
         globals.status[thread_num] = "Running"
-        thread_obj = threading.Thread(target=bot, args=(headless, packages_num, address_range))
+        thread_obj = threading.Thread(target=bot, args=(headless, 
+                                                        packages_num, 
+                                                        checkout_data,
+                                                        address_range))
         thread_obj.start()
 
         # Update last range

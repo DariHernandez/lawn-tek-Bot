@@ -231,3 +231,66 @@
 2021-09-17 19:59:26,066 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
 2021-09-17 19:59:26,067 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
 2021-09-17 19:59:26,196 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 19:11:32,982 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:14:49,992 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:15:03,134 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:16:33,554 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:17:29,956 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:18:20,464 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:18:25,922 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:18:47,505 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:19:02,146 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:19:12,695 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:19:20,141 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:19:26,765 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:19:37,110 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:19:52,137 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:20:09,869 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:24:39,985 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:24:57,194 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:24:57,196 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 19:24:57,274 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 19:24:57,274 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 19:24:57,895 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 19:24:58,007 — WDM — INFO — log:12 — Trying to download new driver from https://chromedriver.storage.googleapis.com/93.0.4577.63/chromedriver_win32.zip
+2021-09-19 19:24:59,394 — WDM — INFO — log:12 — Driver has been saved in cache [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63]
+2021-09-19 19:26:03,695 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:26:03,697 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 19:26:03,743 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 19:26:03,744 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 19:26:03,924 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 19:27:33,213 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:27:33,226 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 19:27:33,278 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 19:27:33,278 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 19:27:33,423 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 19:28:42,490 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:28:42,491 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 19:28:42,538 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 19:28:42,538 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 19:28:42,659 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 19:30:17,320 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:30:17,322 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 19:30:17,386 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 19:30:17,387 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 19:30:17,657 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 19:34:55,177 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:34:55,180 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 19:34:55,244 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 19:34:55,245 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 19:34:55,383 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 19:40:03,648 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:40:03,650 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 19:40:03,692 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 19:40:03,692 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 19:40:03,928 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 19:42:08,049 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:42:08,053 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 19:42:08,124 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 19:42:08,125 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 19:42:08,293 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 19:43:05,421 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 0: 0:1
+2021-09-19 19:43:05,424 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 19:43:05,465 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 19:43:05,466 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 19:43:05,621 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
