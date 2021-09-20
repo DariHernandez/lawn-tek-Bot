@@ -12,8 +12,34 @@ from scraping_manager.automate import Web_scraping
 # Logs instance
 logs = Log(os.path.basename(__file__))
 
-def bot (thread_counter, headless, packages_num, checkout_data={}, address_list=[]): 
+def bot_killer (threads_num):
+    """Send end status for each thread / bot
+
+    Args:
+        threads_num (int): number of threads runing
+    """
+
+    time.sleep (5)
+    print ("All threads / bots running")
+    while True:
+        exit_key = input ('\nPress "q" to quit\n')
+        if exit_key.lower().strip() == 'q':
+            break
+    
+    print ("Killing threads...")
+    for thread_num in range (1, threads_num+1): 
+        globals.status[thread_num] = "end"
+     
+
+def bot (thread_counter, headless, packages_num, checkout_data, address_list): 
     """Funtion for run a bot in threading with specific range of address
+
+    Args:
+        thread_counter (int): Number of the current bot thread
+        headless (bool): Hide (true) or show (false) the chrome window
+        packages_num (int): number of packages and service for random select
+        checkout_data (dict): Lists of user data: names, phone and emails
+        address_list (list): List of addresses
     """
 
     logs.info("Starting thread {thread_counter}...")
@@ -24,8 +50,16 @@ def bot (thread_counter, headless, packages_num, checkout_data={}, address_list=
 
     frame_id = "deeplawn-popup-iframe"
     for address in address_list:
-
+        
         address_num = address_list.index (address) + 1
+
+        # Validate status
+        if globals.status[thread_counter] == "end": 
+            message = f"Thread {thread_counter} killed."
+            logs.info (message, print_text=True)
+            break
+
+        # Status
         message = f"Thread {thread_counter}, address: {address_num} / {len(address_list)}"
         logs.info(message, print_text=True)
     
@@ -39,9 +73,16 @@ def bot (thread_counter, headless, packages_num, checkout_data={}, address_list=
 
         scraper.send_data(address_selector, address)
         time.sleep(2)
-        scraper.click(first_address_selector)
+        try:
+            scraper.click(first_address_selector)
+        except: 
+            pass
         time.sleep(2)
         scraper.click(selector_submit)
+        try:
+            scraper.click(selector_submit)
+        except: 
+            pass
         time.sleep(5)
 
 
@@ -53,7 +94,7 @@ def bot (thread_counter, headless, packages_num, checkout_data={}, address_list=
 
         #   Wait to page load
         selector_spinner = "#__next > div > div > div > div.widget-step-form_content__1i9p6 > div > div > div > div:nth-child(4) > div.mx-auto > div"
-        scraper.wait_die(selector_spinner, time_out=180)
+        scraper.wait_die(selector_spinner, time_out=300)
 
         #   Select continue button
         continue_selector = "#__next div.widget-step-form_buttons__fzKmI > div > button"
@@ -200,6 +241,12 @@ def main ():
 
         # Update last range
         last_range = range_thread       
+
+
+    # Create thread killer
+    thread_obj = threading.Thread(target=bot_killer, args=(len(range_threads),))
+    thread_obj.start()
+
 
 if __name__ == "__main__":
     main()

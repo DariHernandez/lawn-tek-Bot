@@ -587,3 +587,149 @@
 2021-09-19 21:22:24,678 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 4
 2021-09-19 21:22:59,508 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 3 / 4
 2021-09-19 21:24:33,070 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 4 / 4
+2021-09-19 21:36:08,171 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:4
+2021-09-19 21:36:08,178 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:36:08,178 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:36:08,266 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:36:08,267 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:36:08,829 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:36:11,244 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 4
+2021-09-19 21:36:21,709 — urllib3.connectionpool — WARNING — urlopen:751 — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000017D2FB3ECD0>: Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión')': /session/dfa41dbd879eec5a253f6a4af14a5f48/element
+2021-09-19 21:36:38,804 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:4
+2021-09-19 21:36:38,809 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:36:38,813 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:36:38,906 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:36:38,907 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:36:39,283 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:36:41,139 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 4
+2021-09-19 21:37:17,516 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 4
+2021-09-19 21:37:55,789 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:4
+2021-09-19 21:37:55,792 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:37:55,793 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:37:55,846 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:37:55,847 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:37:56,309 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:37:58,209 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 4
+2021-09-19 21:38:33,934 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 4
+2021-09-19 21:40:02,583 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:4
+2021-09-19 21:40:02,595 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:40:02,599 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:40:02,649 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:40:02,650 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:40:03,230 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:40:04,952 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 4
+2021-09-19 21:45:25,290 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:4
+2021-09-19 21:45:25,303 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:45:25,304 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:45:25,382 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:45:25,383 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:45:25,990 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:45:28,122 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 4
+2021-09-19 21:46:17,209 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 4
+2021-09-19 21:46:59,165 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:4
+2021-09-19 21:46:59,176 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:46:59,178 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:46:59,238 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:46:59,239 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:46:59,604 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:47:01,455 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 4
+2021-09-19 21:47:37,262 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 4
+2021-09-19 21:48:11,390 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 3 / 4
+2021-09-19 21:48:11,400 — root — INFO — info:28 — Module: __main__.py - message: Thread {thread_counter} killed.
+2021-09-19 21:48:40,617 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:2
+2021-09-19 21:48:40,620 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 2: 2:4
+2021-09-19 21:48:40,622 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:48:40,623 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:48:40,674 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:48:40,674 — WDM — INFO — log:12 — ====== WebDriver manager ======
+2021-09-19 21:48:40,680 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:48:40,681 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:48:40,724 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:48:40,724 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:48:41,131 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:48:41,145 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:48:43,423 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 2
+2021-09-19 21:48:44,372 — root — INFO — info:28 — Module: __main__.py - message: Thread 2, address: 1 / 2
+2021-09-19 21:49:21,997 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 2
+2021-09-19 21:50:16,529 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:2
+2021-09-19 21:50:16,538 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 2: 2:4
+2021-09-19 21:50:16,539 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:50:16,541 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:50:16,572 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:50:16,573 — WDM — INFO — log:12 — ====== WebDriver manager ======
+2021-09-19 21:50:16,613 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:50:16,614 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:50:16,641 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:50:16,644 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:50:17,113 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:50:17,114 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:50:19,658 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 2
+2021-09-19 21:50:19,751 — root — INFO — info:28 — Module: __main__.py - message: Thread 2, address: 1 / 2
+2021-09-19 21:50:57,732 — root — INFO — info:28 — Module: __main__.py - message: Thread 2, address: 2 / 2
+2021-09-19 21:50:57,742 — root — INFO — info:28 — Module: __main__.py - message: Thread 2 killed.
+2021-09-19 21:50:58,638 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 2
+2021-09-19 21:50:58,644 — root — INFO — info:28 — Module: __main__.py - message: Thread 1 killed.
+2021-09-19 21:52:13,893 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:12
+2021-09-19 21:52:13,899 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 2: 12:25
+2021-09-19 21:52:13,899 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:52:13,900 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:52:13,920 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:52:13,921 — WDM — INFO — log:12 — ====== WebDriver manager ======
+2021-09-19 21:52:13,974 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:52:13,974 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:52:13,975 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:52:13,975 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:52:14,484 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:52:14,562 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:52:17,327 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 12
+2021-09-19 21:52:17,437 — root — INFO — info:28 — Module: __main__.py - message: Thread 2, address: 1 / 13
+2021-09-19 21:52:55,863 — root — INFO — info:28 — Module: __main__.py - message: Thread 2, address: 2 / 13
+2021-09-19 21:52:56,036 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 12
+2021-09-19 21:53:30,498 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 3 / 12
+2021-09-19 21:54:03,760 — root — INFO — info:28 — Module: __main__.py - message: Thread 2, address: 3 / 13
+2021-09-19 21:54:03,783 — root — INFO — info:28 — Module: __main__.py - message: Thread 2 killed.
+2021-09-19 21:54:05,507 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 4 / 12
+2021-09-19 21:54:05,510 — root — INFO — info:28 — Module: __main__.py - message: Thread 1 killed.
+2021-09-19 21:54:22,414 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:5
+2021-09-19 21:54:22,425 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 2: 5:10
+2021-09-19 21:54:22,425 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:54:22,427 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:54:22,435 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 3: 10:15
+2021-09-19 21:54:22,453 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:54:22,454 — WDM — INFO — log:12 — ====== WebDriver manager ======
+2021-09-19 21:54:22,491 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:54:22,492 — WDM — INFO — log:12 — ====== WebDriver manager ======
+2021-09-19 21:54:22,498 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 4: 15:20
+2021-09-19 21:54:22,522 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 5: 20:25
+2021-09-19 21:54:22,524 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:54:22,524 — WDM — INFO — log:12 — ====== WebDriver manager ======
+2021-09-19 21:54:22,536 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:54:22,537 — WDM — INFO — log:12 — ====== WebDriver manager ======
+2021-09-19 21:54:22,579 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:54:22,580 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:54:22,647 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:54:22,647 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:54:22,659 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:54:22,660 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:54:22,671 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:54:22,672 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:54:22,674 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:54:22,677 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:54:22,998 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:54:23,080 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:54:23,094 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:54:23,108 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:54:23,114 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:54:26,932 — root — INFO — info:28 — Module: __main__.py - message: Thread 2, address: 1 / 5
+2021-09-19 21:54:27,979 — root — INFO — info:28 — Module: __main__.py - message: Thread 4, address: 1 / 5
+2021-09-19 21:54:27,985 — root — INFO — info:28 — Module: __main__.py - message: Thread 3, address: 1 / 5
+2021-09-19 21:54:27,996 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 5
+2021-09-19 21:54:28,048 — root — INFO — info:28 — Module: __main__.py - message: Thread 5, address: 1 / 5
+2021-09-19 21:55:25,078 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 5
+2021-09-19 21:55:49,028 — root — INFO — info:28 — Module: __main__.py - message: Thread 5, address: 2 / 5
+2021-09-19 21:56:01,042 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 3 / 5
+2021-09-19 21:56:20,165 — root — INFO — info:28 — Module: __main__.py - message: Thread 4 killed.
+2021-09-19 21:56:23,792 — root — INFO — info:28 — Module: __main__.py - message: Thread 3 killed.
+2021-09-19 21:56:25,118 — root — INFO — info:28 — Module: __main__.py - message: Thread 2 killed.
+2021-09-19 21:56:38,306 — root — INFO — info:28 — Module: __main__.py - message: Thread 1 killed.
+2021-09-19 21:56:57,532 — root — INFO — info:28 — Module: __main__.py - message: Thread 5 killed.
