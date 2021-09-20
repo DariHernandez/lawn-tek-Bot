@@ -51,6 +51,10 @@ def bot (thread_counter, headless, packages_num, checkout_data={}, address_list=
         #   Go to internal frame
         scraper.switch_to_frame (frame_id)
 
+        #   Wait to page load
+        selector_spinner = "#__next > div > div > div > div.widget-step-form_content__1i9p6 > div > div > div > div:nth-child(4) > div.mx-auto > div"
+        scraper.wait_die(selector_spinner, time_out=180)
+
         #   Select continue button
         continue_selector = "#__next div.widget-step-form_buttons__fzKmI > div > button"
         scraper.click(continue_selector)

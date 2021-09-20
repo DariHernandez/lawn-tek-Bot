@@ -558,3 +558,32 @@
 2021-09-19 20:48:09,073 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
 2021-09-19 20:48:09,196 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
 2021-09-19 20:48:11,335 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 1
+2021-09-19 21:17:31,767 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:286
+2021-09-19 21:17:31,772 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:17:31,772 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:17:31,932 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:17:31,932 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:17:32,586 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:17:35,296 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 286
+2021-09-19 21:18:12,577 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 286
+2021-09-19 21:18:28,520 — urllib3.connectionpool — WARNING — urlopen:751 — Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200C100EB50>: Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión')': /session/ce1418f467a2e5b3de4273adc5940094/element
+2021-09-19 21:18:30,565 — urllib3.connectionpool — WARNING — urlopen:751 — Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200C1016BE0>: Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión')': /session/ce1418f467a2e5b3de4273adc5940094/element
+2021-09-19 21:18:32,577 — urllib3.connectionpool — WARNING — urlopen:751 — Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000200C10172B0>: Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión')': /session/ce1418f467a2e5b3de4273adc5940094/element
+2021-09-19 21:19:12,138 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:4
+2021-09-19 21:19:12,150 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:19:12,152 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:19:12,220 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:19:12,221 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:19:12,752 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:19:14,855 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 4
+2021-09-19 21:19:55,689 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 4
+2021-09-19 21:21:46,982 — root — INFO — info:28 — Module: __main__.py - message: Starting thread 1: 0:4
+2021-09-19 21:21:47,005 — root — INFO — info:28 — Module: __main__.py - message: Starting thread {thread_counter}...
+2021-09-19 21:21:47,008 — WDM — INFO — log:22 — ====== WebDriver manager ======
+2021-09-19 21:21:47,076 — WDM — INFO — log:12 — Current google-chrome version is 93.0.4577
+2021-09-19 21:21:47,078 — WDM — INFO — log:12 — Get LATEST driver version for 93.0.4577
+2021-09-19 21:21:47,435 — WDM — INFO — log:12 — Driver [C:\Users\daria\.wdm\drivers\chromedriver\win32\93.0.4577.63\chromedriver.exe] found in cache
+2021-09-19 21:21:49,499 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 1 / 4
+2021-09-19 21:22:24,678 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 2 / 4
+2021-09-19 21:22:59,508 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 3 / 4
+2021-09-19 21:24:33,070 — root — INFO — info:28 — Module: __main__.py - message: Thread 1, address: 4 / 4
