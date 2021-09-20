@@ -12,13 +12,39 @@ from scraping_manager.automate import Web_scraping
 # Logs instance
 logs = Log(os.path.basename(__file__))
 
-def bot_killer (threads_num):
+def bot_killer_requests (): 
+    """Requests for user to use the bot_killer, for end the program 
+
+    Args:
+        threads_num (int): number of threads runing
+    """
+
+    # Get threads keys 
+    threads_keys = list(globals.status.keys())
+
+    # Check all threads status
+    all_threrads_end = True
+    for thread_num in threads_keys: 
+        thread_status = globals.status[thread_num]
+        if thread_status != "end": 
+            all_threrads_end = False
+
+    # User message
+    if all_threrads_end:
+        message = "All threads finished, waiting for user input..."
+        logs.info(message, print_text=True)
+
+def bot_killer ():
     """Send end status for each thread / bot
 
     Args:
         threads_num (int): number of threads runing
     """
 
+    # Get threads keys
+    threads_keys = list(globals.status.keys())
+
+    # Wait for user input
     time.sleep (5)
     print ("All threads / bots running")
     while True:
@@ -26,9 +52,13 @@ def bot_killer (threads_num):
         if exit_key.lower().strip() == 'q':
             break
     
-    print ("Killing threads...")
-    for thread_num in range (1, threads_num+1): 
+    # ENd threads
+    print ("Killing threads and updating addresses files...")
+    for thread_num in threads_keys: 
         globals.status[thread_num] = "end"
+
+    # Update addresses file
+    update_address()
      
 
 def bot (thread_counter, headless, packages_num, checkout_data, address_list): 
@@ -58,6 +88,9 @@ def bot (thread_counter, headless, packages_num, checkout_data, address_list):
             message = f"Thread {thread_counter} killed."
             logs.info (message, print_text=True)
             break
+
+        # Save address in list of finished
+        globals.addresses_finished.append(address)
 
         # Status
         message = f"Thread {thread_counter}, address: {address_num} / {len(address_list)}"
@@ -164,9 +197,42 @@ def bot (thread_counter, headless, packages_num, checkout_data, address_list):
         scraper.click_js(submit_selector)
         time.sleep(5)
 
-    # End chrome
+
+    # End chrome and update status
+    globals.status[thread_counter] = "end"
+    bot_killer_requests()
     scraper.end_browser()
     sys.exit()
+
+def update_address (): 
+
+    address_output_path = "address_finished.txt"
+    address_input_path = "address.txt"
+    addresses_finished = globals.addresses_finished
+
+    # Save addresses in output file
+    with open (address_output_path, "a") as file: 
+        for address in addresses_finished:
+            address_formated = f"{address}\n"
+            file.write(address_formated)
+    
+    # Remove address from input file
+
+    #   Get current address list
+    with open (address_input_path) as file: 
+        address_input_list = file.read().splitlines()
+
+    #   Remove finished address in address_list
+    for addresse in addresses_finished: 
+        if addresse in address_input_list: 
+            address_input_list.remove (addresse)
+
+    #   Save modifies input file
+    with open (address_input_path, "w") as file: 
+        for address in address_input_list:
+            address_formated = f"{address}\n"
+            file.write(address_formated)
+
 
 def main (): 
     """Main flow of the program
@@ -179,7 +245,7 @@ def main ():
     headless = credentials.get_credential("headless")
 
 
-    # Read address list from file
+    # Read address list from input file
     address_path = os.path.join (os.path.dirname (__file__), "address.txt")
     with open (address_path) as file: 
         address_list = file.read().splitlines()
@@ -213,7 +279,7 @@ def main ():
     end_range = len(address_list)
     skip_values = int(len(address_list)/threads_num)
     range_threads = list(range(0, end_range+1, skip_values)[1:])
-    range_threads [-1] = len(address_list)
+    range_threads [-1] = len(address_list) + 1 
 
     # Debug lines
     # range_threads = [1]
@@ -240,11 +306,11 @@ def main ():
         thread_obj.start()
 
         # Update last range
-        last_range = range_thread       
+        last_range = range_thread
 
 
     # Create thread killer
-    thread_obj = threading.Thread(target=bot_killer, args=(len(range_threads),))
+    thread_obj = threading.Thread(target=bot_killer)
     thread_obj.start()
 
 
