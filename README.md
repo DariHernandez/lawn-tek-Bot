@@ -1,7 +1,25 @@
-# [PROJECT NAME]
+# lawn-tek Bot
 **python version: 3.9**
 
-[DESCRIPTION]
+Bot for submit random data for page: [lawn-tek](https://www.lawn-tek.com/)
+
+## Workflow
+1. Get all addresses from *address.txt* file (more details in **Settings** section). 
+2. Open each chrome window with specific address list for each one.
+
+### In each bot / Chrome window: 
+
+4. Go home page
+5. Type address in search bar
+6. Select first suggested option
+7. Wait for page find the address
+8. Go to packages page
+9. Select specific number of random packages (more details in **Settings** section). 
+10. Go to checkout
+11. Fill form with random user data from *checkout_data.csv* file (more details in **Settings** section). 
+12. Select option *Pay As You Go*
+13. Submit form
+14. Continue with next address (in the same chrome windows)
 
 
 # Install
@@ -15,47 +33,80 @@ $ pip install -r requirements.txt
 
 ## Programs
 
-To run the project, the following programs must be installed:: 
+To run the project, the following programs must be installed:
 
 * [Google Chrome](https://www.google.com/intl/es/chrome) last version
 
 # Run the program
 
-## GUI
+Run the *__main__.py*, or the *project folder* with your python 3.9 interpreter. 
 
-For **start** the program with **graphic interface**, **run** the file **__ main__.py** with you **python 3.9** interpreter.
+# Settings
 
-The graphical interface, in addition to allowing you to run the program, will make it easier for you to configure it (more details in the configuration section).
+## address.txt
 
-![Home]([img url])
+Text file with a list for address for use in the bot.
+The file should not have empty rows
+When the program end, all addresses processed will be removed from file.
 
-## Terminal
+Sample file: 
+```txt
+3100 28th Ave Marion 52302 
+3230 28th Ave Marion 52302 
+3350 28th Ave Marion 52302 
+4110 Waldemar Way Marion 52302 
+4050 Waldemar Way Marion 52302 
+```
 
-To **start** the program **in terminal** / without interfaz, **run** the **crimegrade_scraper.py** file with your **python 3.9** interpreter.
+## address_finished.txt
 
-Executing the program in this way **it will not be possible to update the configurations** and it will be executed with the **last configuration** (more details in the next).
+File where the processed address will be automated saved.
 
-Ejecutando el programa de esta forma **no se podrán actualizar las configuraciones** y se ejecutará con la **última configuración establecida** (mas detalles en la sección de configuración). 
+Sample file: 
+```txt
+3320 28th Ave Marion 52302 
+3415 28th Ave Marion 52302 
+4200 Waldemar Way Marion 52302 
+```
 
-# Configuration / setting
+## checkout_data.csv
 
-## Home
+CSV file with random data: first_names,last_names, emails,phones
+For each address, the bot will be select a random value from each column, to fill the checkout form. 
 
-![Config screen 1]([img url])
+Sample file: 
+```csv
+first_names,last_names, emails,phones
+Maria, Brown,myemailsample@gmail.com, +14493247419
+Joseph, Smith,myemailsample@hotmail.com, +524493247419
+"John B.", Alister, myemailsample@yahoo.com,+11123657925
+Elizabeth, Hernande, myemailsample@aol.com,+19986347169
+```
+Sample data selected for a bot: 
+* name: *Maria Smith*
+* emails: *myemailsample@aol.com*
+* phone: *+11123657925*
 
-On the home screen, you must **write the name of the table** where the **scraping data** will be **saved**.
-If the **table does not exist** in the database, **the program will create it**.
+## con fig.json
 
-### DATABASE
+All **configurations** are saved in the **con fig.json file**, so **you can edit**
 
-![Config screen 2]([img url])
+Sample file: 
+```json
+{
+ "threads": 2, 
+ "packages": 3, 
+ "headless": false
+}
+```
 
-To configure the database, we need to set our credentials:
-* **Server**
-* **Database name**
-* **User**
-* **Password**
-
-## config.json
-
-All **configurations** are saved in the **config.json file**, so **you can edit it manually** without the graphical interface.
+* ### threads
+(Integer greater or equal to 1)
+* ### packages
+(Integer greater or equal to 1 and smaller or equal than 15)
+Number of random packages or services, for select in packages page 
+* ### headless
+(Boolean: true or false)
+Use the browser in headless mode. 
+If the value is *true*, the bots will be executed with hidden window.
+If the value is *false*, the bots will be executed showing the browser.
