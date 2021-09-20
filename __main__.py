@@ -1,5 +1,6 @@
 import os
 import csv
+import sys
 import time
 import globals
 import threading
@@ -8,9 +9,14 @@ from log import Log
 from config import Config
 from scraping_manager.automate import Web_scraping
 
-def bot (headless, packages_num, checkout_data={}, address_list=[]): 
+# Logs instance
+logs = Log(os.path.basename(__file__))
+
+def bot (thread_counter, headless, packages_num, checkout_data={}, address_list=[]): 
     """Funtion for run a bot in threading with specific range of address
     """
+
+    logs.info("Starting thread {thread_counter}...")
 
     # Start chrome
     home_page = "https://www.lawn-tek.com/"
@@ -18,6 +24,10 @@ def bot (headless, packages_num, checkout_data={}, address_list=[]):
 
     frame_id = "deeplawn-popup-iframe"
     for address in address_list:
+
+        address_num = address_list.index (address) + 1
+        message = f"Thread {thread_counter}, address: {address_num} / {len(address_list)}"
+        logs.info(message, print_text=True)
     
         # Go to gome page
         scraper.set_page(home_page)
@@ -75,7 +85,7 @@ def bot (headless, packages_num, checkout_data={}, address_list=[]):
         scraper.click(go_checkout_selector)
 
 
-        # Fill chekout
+        # Chekout
         scraper.refresh_selenium()
 
         #   Go to internal frame
@@ -101,21 +111,21 @@ def bot (headless, packages_num, checkout_data={}, address_list=[]):
         #   Pay method
         pay_go_selector = "#myTab > li:nth-child(2)"
         scraper.click(pay_go_selector)
+        time.sleep(3)
 
         submit_selector = "#__next > div > div > div > div.widget-step-form_content__1i9p6 > "
         submit_selector += "div > div > div.mt-10.lg\:mt-0 > div > div > button"
-        scraper.click(submit_selector)
+
+        scraper.click_js(submit_selector)
         time.sleep(5)
 
     # End chrome
     scraper.end_browser()
+    sys.exit()
 
 def main (): 
     """Main flow of the program
     """
-    
-    # Logs instance
-    logs = Log(os.path.basename(__file__))
 
     # Get project settings
     credentials = Config()
@@ -157,18 +167,18 @@ def main ():
     # Calculate address for each thread
     end_range = len(address_list)
     skip_values = int(len(address_list)/threads_num)
-    range_threads = list(range(0, end_range, skip_values)[1:])
+    range_threads = list(range(0, end_range+1, skip_values)[1:])
     range_threads [-1] = len(address_list)
 
     # Debug lines
-    range_threads = [1]
+    # range_threads = [1]
 
     # Create threads
     last_range = 0
     for range_thread in range_threads:
 
         # Get sublist of address
-        thread_num = range_threads.index (range_thread)
+        thread_num = range_threads.index (range_thread) + 1
         address_range = address_list[last_range:range_thread]
 
         # Debug lines
@@ -177,23 +187,15 @@ def main ():
 
         # Create thread
         globals.status[thread_num] = "Running"
-        thread_obj = threading.Thread(target=bot, args=(headless, 
+        thread_obj = threading.Thread(target=bot, args=(thread_num, 
+                                                        headless, 
                                                         packages_num, 
                                                         checkout_data,
                                                         address_range))
         thread_obj.start()
 
         # Update last range
-        last_range = range_thread        
-
-    # TODO: Create threads killer
-    
-
-
-    
-    
-        
-
+        last_range = range_thread       
 
 if __name__ == "__main__":
     main()
