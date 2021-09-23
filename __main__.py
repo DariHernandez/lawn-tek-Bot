@@ -61,13 +61,12 @@ def bot_killer ():
     update_address()
      
 
-def bot (thread_counter, headless, packages_num, checkout_data, address_list): 
+def bot (thread_counter, headless, checkout_data, address_list): 
     """Funtion for run a bot in threading with specific range of address
 
     Args:
         thread_counter (int): Number of the current bot thread
         headless (bool): Hide (true) or show (false) the chrome window
-        packages_num (int): number of packages and service for random select
         checkout_data (dict): Lists of user data: names, phone and emails
         address_list (list): List of addresses
     """
@@ -75,7 +74,7 @@ def bot (thread_counter, headless, packages_num, checkout_data, address_list):
     logs.info("Starting thread {thread_counter}...")
 
     # Start chrome
-    home_page = "https://www.lawn-tek.com/"
+    home_page = "https://deeplawntest.carrd.co/"
     scraper = Web_scraping(headless=headless)
 
     frame_id = "deeplawn-popup-iframe"
@@ -87,7 +86,11 @@ def bot (thread_counter, headless, packages_num, checkout_data, address_list):
         if globals.status[thread_counter] == "end": 
             message = f"Thread {thread_counter} killed."
             logs.info (message, print_text=True)
-            break
+            
+            # End chrome and update status
+            globals.status[thread_counter] = "end"
+            scraper.end_browser()
+            sys.exit()
 
         # Save address in list of finished
         globals.addresses_finished.append(address)
@@ -101,7 +104,7 @@ def bot (thread_counter, headless, packages_num, checkout_data, address_list):
 
         # Search address and select first element
         address_selector = "#address-input"
-        first_address_selector = "body > div.pac-container.pac-logo > div"
+        first_address_selector = "body > div.pac-container.pac-logo > div:nth-child(1)"
         selector_submit = "#lawn-container-div > div > button"
 
         scraper.send_data(address_selector, address)
@@ -135,28 +138,21 @@ def bot (thread_counter, headless, packages_num, checkout_data, address_list):
         time.sleep(2)
 
 
-        # Select random packages
+        # Select package
         scraper.refresh_selenium()
         
         #   Go to internal frame
         scraper.switch_to_main_frame()
         scraper.switch_to_frame(frame_id)
 
-        #   Get all package buttons
+        #   Click in package
         selector_package = "button.MuiButtonBase-root.MuiButton-root.MuiButton-text"
-        package_buttons = scraper.get_elems(selector_package)
-        valid_button_texts = ["Select Service", "Select Package"]
-        package_buttons_filtered = []
-        for package_button in package_buttons: 
-            if package_button.text in valid_button_texts: 
-                package_buttons_filtered.append(package_button)
-
-        #   Click specific number of package buttons
-        for _ in range (packages_num): 
-            time.sleep (1)
-            random_button = random.choice(package_buttons_filtered)
-            random_button.click()
-            package_buttons_filtered.remove (random_button)
+        try:
+            scraper.click(selector_package)
+        except: 
+            message = f"Thread {thread_counter}, package button not found"
+            logs.info(message)
+            continue
 
         #   Go to checkout page
         go_checkout_selector = "button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.step-buttons_next__7fM51"
@@ -241,7 +237,6 @@ def main ():
     # Get project settings
     credentials = Config()
     threads_num = credentials.get_credential("threads")
-    packages_num = credentials.get_credential("packages")
     headless = credentials.get_credential("headless")
 
 
@@ -300,7 +295,6 @@ def main ():
         globals.status[thread_num] = "Running"
         thread_obj = threading.Thread(target=bot, args=(thread_num, 
                                                         headless, 
-                                                        packages_num, 
                                                         checkout_data,
                                                         address_range))
         thread_obj.start()
