@@ -14,7 +14,7 @@ Bot for submit random data for page: [lawn-tek](https://www.lawn-tek.com/)
 6. Select first suggested option
 7. Wait for page find the address
 8. Go to packages page
-9. Select specific number of random packages (more details in **Settings** section). 
+9. select the only package.
 10. Go to checkout
 11. Fill form with random user data from *checkout_data.csv* file (more details in **Settings** section). 
 12. Select option *Pay As You Go*
@@ -95,16 +95,13 @@ Sample file:
 ```json
 {
  "threads": 2, 
- "packages": 3, 
  "headless": false
 }
 ```
 
 * ### threads
 (Integer greater or equal to 1)
-* ### packages
-(Integer greater or equal to 1 and smaller or equal than 15)
-Number of random packages or services, for select in packages page 
+Number of Bots / Chrome windows to open at the same time
 * ### headless
 (Boolean: true or false)
 Use the browser in headless mode. 
