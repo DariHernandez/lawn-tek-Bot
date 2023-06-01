@@ -41,106 +41,106 @@ Project type: **client's project**
 
 # Details
 
-## Workflow\r
-\r
-Get all addresses from address.txt file (more details in **Settings** section).\r
-Open each chrome window with specific address list for each one.\r
-\r
-## In each bot / Chrome window:\r
-\r
-1. Go home page\r
-2. Type address in search bar\r
-3. Select first suggested option\r
-4. Wait for page find the address\r
-5. Go to packages page\r
-6. select the only package.\r
-7. Go to checkout\r
-8. Fill form with random user data from checkout_data.csv file (more details in Settings section).\r
-9. Select option Pay As You Go\r
-10. Submit form\r
+## Workflow
+
+Get all addresses from address.txt file (more details in **Settings** section).
+Open each chrome window with specific address list for each one.
+
+## In each bot / Chrome window:
+
+1. Go home page
+2. Type address in search bar
+3. Select first suggested option
+4. Wait for page find the address
+5. Go to packages page
+6. select the only package.
+7. Go to checkout
+8. Fill form with random user data from checkout_data.csv file (more details in Settings section).
+9. Select option Pay As You Go
+10. Submit form
 11. Continue with next address (in the same chrome windows)
 
 # Install
 
-## Third party modules\r
-\r
-Install all modules from pip:\r
-\r
-\\`\\`\\`bash\r
-$ pip install -r requirements.txt\r
-\\`\\`\\`\r
-\r
-## Programs\r
-\r
-To run the project, the following programs must be installed:\r
-\r
+## Third party modules
+
+Install all modules from pip:
+
+```bash
+$ pip install -r requirements.txt
+```
+
+## Programs
+
+To run the project, the following programs must be installed:
+
 * [Google Chrome](https://www.google.com/intl/es_es/chrome/) last version
 
 # Settings
 
-## address.txt\r
-\r
-Text file with a list for address for use in the bot.\r
-The file should not have empty rows\r
-When the program end, all addresses processed will be removed from file.\r
-\r
-Sample file: \r
-\\`\\`\\`txt\r
-3100 28th Ave Marion 52302 \r
-3230 28th Ave Marion 52302 \r
-3350 28th Ave Marion 52302 \r
-4110 Waldemar Way Marion 52302 \r
-4050 Waldemar Way Marion 52302 \r
-\\`\\`\\`\r
-\r
-## address_finished.txt\r
-\r
-File where the processed address will be automated saved.\r
-\r
-Sample file: \r
-\\`\\`\\`txt\r
-3320 28th Ave Marion 52302 \r
-3415 28th Ave Marion 52302 \r
-4200 Waldemar Way Marion 52302 \r
-\\`\\`\\`\r
-\r
-## checkout_data.csv\r
-\r
-CSV file with random data: first_names,last_names, emails,phones\r
-For each address, the bot will be select a random value from each column, to fill the checkout form. \r
-\r
-Sample file: \r
-\\`\\`\\`csv\r
-first_names,last_names, emails,phones\r
-Maria, Brown,myemailsample@gmail.com, +14493247419\r
-Joseph, Smith,myemailsample@hotmail.com, +524493247419\r
-\\\"John B.\\\", Alister, myemailsample@yahoo.com,+11123657925\r
-Elizabeth, Hernande, myemailsample@aol.com,+19986347169\r
-\\`\\`\\`\r
-Sample data selected for a bot: \r
-* name: *Maria Smith*\r
-* emails: *myemailsample@aol.com*\r
-* phone: *+11123657925*\r
-\r
-## config.json\r
-\r
-All **configurations** are saved in the **con fig.json file**, so **you can edit**\r
-\r
-Sample file: \r
-\\`\\`\\`json\r
-{\r
- \\\"threads\\\": 2, \r
- \\\"headless\\\": false\r
-}\r
-\\`\\`\\`\r
-\r
-### threads\r
-(Integer greater or equal to 1)\r
-Number of Bots / Chrome windows to open at the same time\r
-### headless\r
-(Boolean: true or false)\r
-Use the browser in headless mode. \r
-If the value is *true*, the bots will be executed with hidden window.\r
+## address.txt
+
+Text file with a list for address for use in the bot.
+The file should not have empty rows
+When the program end, all addresses processed will be removed from file.
+
+Sample file: 
+```txt
+3100 28th Ave Marion 52302 
+3230 28th Ave Marion 52302 
+3350 28th Ave Marion 52302 
+4110 Waldemar Way Marion 52302 
+4050 Waldemar Way Marion 52302 
+```
+
+## address_finished.txt
+
+File where the processed address will be automated saved.
+
+Sample file: 
+```txt
+3320 28th Ave Marion 52302 
+3415 28th Ave Marion 52302 
+4200 Waldemar Way Marion 52302 
+```
+
+## checkout_data.csv
+
+CSV file with random data: first_names,last_names, emails,phones
+For each address, the bot will be select a random value from each column, to fill the checkout form. 
+
+Sample file: 
+```csv
+first_names,last_names, emails,phones
+Maria, Brown,myemailsample@gmail.com, +14493247419
+Joseph, Smith,myemailsample@hotmail.com, +524493247419
+"John B.", Alister, myemailsample@yahoo.com,+11123657925
+Elizabeth, Hernande, myemailsample@aol.com,+19986347169
+```
+Sample data selected for a bot: 
+* name: *Maria Smith*
+* emails: *myemailsample@aol.com*
+* phone: *+11123657925*
+
+## config.json
+
+All **configurations** are saved in the **con fig.json file**, so **you can edit**
+
+Sample file: 
+```json
+{
+ "threads": 2, 
+ "headless": false
+}
+```
+
+### threads
+(Integer greater or equal to 1)
+Number of Bots / Chrome windows to open at the same time
+### headless
+(Boolean: true or false)
+Use the browser in headless mode. 
+If the value is *true*, the bots will be executed with hidden window.
 If the value is *false*, the bots will be executed showing the browser.
 
 # Run
